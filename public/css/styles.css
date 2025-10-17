@@ -1,4 +1,10 @@
 /* Custom Styles for Bootstrap Responsive Website */
+#logoHome {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+    
+}
 
 /* Root Variables */
 :root {
