@@ -1,3 +1,15 @@
+/*.info {
+    position: relative; 
+    width: 100vh;
+    height: auto;
+    
+
+    background-image: url("img/gif6.gif");
+    background-size: cover;
+    background-position: center;
+
+}
+
 /* Custom Styles for Bootstrap Responsive Website */
 #logoHome {
     width: 100px;
@@ -6,11 +18,20 @@
     
 }
 
+#firstCourse {
+    width: 190vw;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
 /* Root Variables */
 :root {
-    --primary-color: #007bff;
-    --secondary-color: #6c757d;
+    --primary-color: #2b2b2b;
+    --secondary-color: #b5c3cf;
     --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
 }
 
 /* Global Styles */
