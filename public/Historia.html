@@ -3,19 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hollow Knight</title>
+    <title>Hollow Knight - PRUEBA DEFINITIVA</title>
     
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#home">
@@ -30,52 +26,36 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="#home">Inicio</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Recepción</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Premios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Contacto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Historia.html" target="_blank">Historia</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Epilogo.html" target="_blank">Epilogo</a>
-                    </li>
-                </ul>
+                    </ul>
             </div>
         </div>
     </nav>
-    <!-- Hero Section -->
     <section id="home" class="hero-section">
         <div class="container">
             <div class="row align-items-center min-vh-100">
                 <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold text-white mb-4">
-                        llegada a la ciudad de Dirtmouth.
-                    </h1>
-                    <p class="lead text-white-50 mb-4">
-                        una pequeña ciudad situada sobre las ruinas de Hallownest, 
-                        con la intención de aventurarse para descubrir lo que le espera allí. 
-                        A medida que avanza por el reino olvidado, se encuentra con los restos 
-                        reanimados de los antiguos residentes de Hallownest y otras criaturas, 
-                        siendo transformados lentamente por una misteriosa fuerza. En su camino, 
-                        el Caballero también se topa con Hornet, la autoproclamada protectora de 
-                        las ruinas de Hallownest, quien intenta detener la búsqueda del jugador.
-                        <br><br>
-                        ¿Estás preparado para descubrir la historia completa?
-                    </p>
-                    <div class="d-flex gap-3">
-                        <a href="#Historia.html" class="btn btn-light btn-lg">
-                            <i class="bi bi-arrow-right"></i> Historia
-                        </a>
-                        <a href="#contact" class="btn btn-outline-light btn-lg">
-                            <i class="bi bi-envelope"></i> Comprar
-                        </a>
-                    </div>
+                    
+                        <h1 id="titulo-historia" class="display-4 fw-bold text-white mb-4">
+                            llegada a la ciudad de Dirtmouth.
+                        </h1>
+                        
+                        <p id="parrafo-historia" class="lead text-white-50 mb-4">
+                            una pequeña ciudad situada sobre las ruinas de Hallownest, 
+                            con la intención de aventurarse para descubrir lo que le espera allí. 
+                            ... (etc)
+                            <br><br>
+                            ¿Estás preparado para descubrir la historia completa?
+                        </p>
+                        <div class="d-flex gap-3">
+                            <a href="#Historia.html" class="btn btn-light btn-lg">
+                                <i class="bi bi-arrow-right"></i> Historia
+                            </a>
+                            
+                            <button id="btn-cambiar-historia" type="button" class="btn btn-outline-light btn-lg">
+                                <i class="bi bi-envelope"></i> Siguiente
+                            </button>
+                        </div>
+                    
                 </div>
                 <div class="col-lg-6">
                     <div class="hero-image">
@@ -86,3 +66,143 @@
             </div>
         </div>
     </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+    
+    // Checkpoint 1: Se ejecuta cuando el HTML termina de cargar.
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        // ¡¡ESTA ALERTA DEBERÍA APARECER APENAS CARGUE LA PÁGINA!!
+        //alert("ALERTA 1: ¡El SCRIPT DENTRO DEL HTML se ha cargado!");
+
+        // --- Código de la Historia ---
+        
+        const botonCambiar = document.getElementById('btn-cambiar-historia');
+        const tituloElemento = document.getElementById('titulo-historia');
+        const parrafoElemento = document.getElementById('parrafo-historia');
+
+        if (botonCambiar && tituloElemento && parrafoElemento) {
+            
+            // Si ves esto, encontró los IDs
+            //alert("ALERTA 2: ¡Elementos (botón, título, párrafo) encontrados!");
+
+            const historiaCompleta = [
+                {
+                    titulo: "llegada a la ciudad de Dirtmouth.",
+                    parrafo: "una pequeña ciudad situada sobre las ruinas de Hallownest, con la intención de aventurarse para descubrir lo que le espera allí. A medida que avanza por el reino olvidado, se encuentra con los restos reanimados de los antiguos residentes de Hallownest y otras criaturas, siendo transformados lentamente por una misteriosa fuerza. En su camino, el Caballero también se topa con Hornet, la autoproclamada protectora de las ruinas de Hallownest, quien intenta detener la búsqueda del jugador.\n\n¿Estás preparado para descubrir la historia completa?"
+                },
+                {
+                    titulo: "El Reino Caído",
+                    parrafo: "Bajo la superficie del mundo, donde la luz apenas alcanza y las piedras conservan la memoria de una civilización perdida, se extendía Hallownest: un reino subterráneo que alguna vez fue próspero, hogar de insectos sabios, templos brillantes y canciones que hablaban del alma y el honor. Ahora, solo quedaban ecos. Las voces habían sido sustituidas por el murmullo de la infección, una fuerza luminosa que consumía cuerpos y mentes, despojando a sus habitantes de toda razón. Desde la soledad de la superficie, un pequeño ser sin nombre descendió hacia esa oscuridad. No tenía pasado, ni propósito visible. Su rostro era una máscara blanca, su cuerpo diminuto, y en su mano portaba un clavo, un arma que parecía parte de sí mismo. Aquel ser sería conocido como el Caballero."
+                },
+                {
+                    titulo: "Los Cruces Olvidados",
+                    parrafo: "Su viaje comenzó en Dirtmouth, un pueblo desolado en la cima del abismo. Solo un anciano quedaba allí, un testigo cansado del fin. Bajo la tierra, le dijo, yacía un reino dormido. El Caballero, sin pronunciar palabra, bajó. El descenso lo llevó a los Cruces Olvidados, un laberinto de ruinas azules y estructuras huecas. En aquel silencio retumbaban los ecos de un esplendor desaparecido. Entre los escombros halló enemigos corrompidos, insectos sin mente movidos solo por la infección. Allí enfrentó a su primer gran enemigo: el Falso Caballero, un cuerpo descomunal que ocultaba una criatura diminuta en su interior. Al derrotarlo, el Caballero descubrió su primer poder interior: podía canalizar su Alma, usando esa energía espiritual para curarse o atacar con fuerza. Ese descubrimiento fue el inicio de su transformación."
+                },
+                {
+                    titulo: "Sendero Verde y los Páramos",
+                    parrafo: "Guiado por el zumbido del viento, llegó al Sendero Verde, un bosque subterráneo cubierto de musgo y de vida. Las aguas eran ácidas y el aire húmedo. Entre las hojas biolumincentes se movía una figura veloz: Hornet, una guerrera con aguja e hilo. Su duelo fue rápido y elegante. Cuando Hornet cayó, observó al Caballero con extrañeza, como si reconociera algo familiar en él. Tras esa batalla, el Caballero obtuvo el Manto de Polilla, que le otorgó la habilidad de realizar un dash, un impulso fugaz que le permitía esquivar ataques y cruzar abismos. Con ese nuevo poder, los caminos antes cerrados se abrieron ante él. Las raíces verdes dieron paso a un territorio húmedo y lleno de esporas: los Páramos Fúngicos. Allí, el reino parecía seguir respirando. Los hongos palpitaban, expulsando nubes doradas y risas huecas. Entre sus túneles vivían las Mantis, insectos orgullosos que mantenían su honor incluso en medio de la ruina. El Caballero las desafió, y tras un combate intenso, las Hermanas Mantis aceptaron su fuerza. Como muestra de respeto, le entregaron la Garra de Mantis, con la que pudo trepar y deslizarse por muros verticales, alcanzando lugares antes imposibles. Ese poder no solo le dio libertad de movimiento, sino la sensación de dominar la geografía viva de Hallownest."
+                },
+                {
+                    titulo: "Ciudad de Lágrimas y Nido Profundo",
+                    parrafo: "Entre ascensores y túneles llegó a la Ciudad de Lágrimas, el corazón del reino. Una lluvia perpetua caía del techo rocoso, cubriendo las torres con un brillo plateado. Era un lugar de belleza y tristeza, donde el pasado se reflejaba en cada gota. En lo alto de la ciudad enfrentó al Maestro del Alma, un sabio consumido por su obsesión por el conocimiento. Al vencerlo, el Caballero aprendió a concentrar su energía espiritual en un golpe devastador, que le permitía caer con fuerza sobre el suelo y romper estructuras ocultas. Entre los templos inundados y los ecos de relojes oxidados, el Caballero comprendió que el reino había intentado luchar contra la infección con sabiduría, pero la sabiduría también se había podrido. El viaje lo llevó hacia el Nido Profindo, un territorio oscuro y tembloroso, lleno de telarañas, susurros y criaturas que se movían en la penumbra. Aquí, Hallownest mostraba su rostro más salvaje y temible. El Caballero caminó entre cadáveres envueltos en seda, rodeado por sombras que imitaban su figura. En ese lugar descubrió rastros de experimentos: vasallos que no tenían voz, que parecían versiones inacabadas de él mismo. La oscuridad comenzó a hablarle. No con palabras, sino con recuerdos. Guiado por esas visiones, descendió aún más, hasta llegar al Abismo Antiguo, donde no existía ni sonido ni vida. Allí enfrentó al Receptáculo Roto, una criatura parecida a él, corrompida por la infección. Al vencerlo, el poder del lugar lo envolvió, y de su espalda brotaron las Monarch Wings, otorgándole la habilidad de dar un doble salto."
+                },
+                {
+                    titulo: "El Origen en el Abismo",
+                    parrafo: "Más profundo aún, el Caballero llegó al fondo del Abismo. Allí, entre ríos de sombra líquida, descubrió su origen: era uno de los vasos creados por el Rey Pálido, seres nacidos del Vacío, sin mente ni voluntad, diseñados para contener la infección de la antigua diosa de luz: la Radiance. El Caballero comprendió que él no era único. Era un intento más, una réplica de aquel que alguna vez fue llamado el Hollow Knight, el recipiente elegido que había fracasado en su misión. De las sombras surgió nuevamente la vida. En los Jardines de la Reina, flores y espinas convivían en equilibrio. Era un lugar de belleza mortal, un recuerdo de la naturaleza antes de la corrupción. Allí, Hornet volvió a aparecer. Esta vez no como enemiga, sino como guardiana de un destino inevitable. Su duelo fue un acto de aceptación. Al caer, Hornet dijo con voz temblorosa: “Entonces eres tú… el que pondrá fin a esto”. El Caballero siguió adelante, cargando con las palabras que no podía decir y el deber que no podía evitar. De vuelta en la Ciudad de Lágrimas, encontró el acceso al Templo del Huevo Negro, una catedral sellada donde el antiguo Hollow Knight permanecía encadenado. Los tres Soñadores Monomon, Lurien y Herrah que mantenían su prisión, habían sido liberados de su sueño, rompiendo los sellos. Dentro del templo, el aire estaba pesado, saturado por la corrupción de la Radiance. El Hollow Knight se retorcía, prisionero de su propio sacrificio. El Caballero se acercó. No había gloria en ese encuentro, solo un deber."
+                },
+                {
+                    titulo: "El Sacrificio Final",
+                    parrafo: "El combate fue un diálogo entre dos silencios. El Hollow Knight atacaba, pero sus golpes a veces se detenían, como si implorara que lo liberaran. El Caballero, sin emociones, cumplió con su propósito. Con cada impacto, la luz se filtraba por las grietas de su cuerpo. La infección, desesperada, buscaba un nuevo recipiente. Entonces, el Caballero avanzó. Aceptó su destino. El Vacío lo envolvió, sellando el templo una vez más. La infección quedó contenida en su cuerpo, y Hallownest cayó en un nuevo sueño."
+                }
+            ];
+
+            let historiaIndex = 0;
+
+            botonCambiar.addEventListener('click', function() {
+                
+                // Si ves esto, el clic funciona
+                //alert("ALERTA 3: ¡Botón presionado!");
+
+                historiaIndex++;
+                if (historiaIndex >= historiaCompleta.length) {
+                    historiaIndex = 0;
+                }
+                tituloElemento.textContent = historiaCompleta[historiaIndex].titulo;
+                parrafoElemento.textContent = historiaCompleta[historiaIndex].parrafo;
+            });
+
+        } else {
+            // Error si no encuentra los IDs
+            //alert("ERROR: No se pudieron encontrar los IDs 'btn-cambiar-historia', 'titulo-historia', o 'parrafo-historia'. Revisa el HTML.");
+        }
+
+        // --- TU CÓDIGO ORIGINAL (scroll, etc.) ---
+        
+        const navLinks = document.querySelectorAll('a[href^="#"]');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    const offsetTop = targetSection.offsetTop - 70;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        const sections = document.querySelectorAll('section[id]');
+        const navItems = document.querySelectorAll('.nav-link');
+        window.addEventListener('scroll', function() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === `#${current}`) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        const contactForm = document.querySelector('.contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                if (!name || !email) {
+                    alert('Por favor, completa todos los campos.');
+                    return;
+                }
+                alert('¡Mensaje enviado exitosamente!');
+                this.reset();
+            });
+        }
+
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                if (navbarCollapse.classList.contains('show')) {
+                    navbarToggler.click();
+                }
+            });
+        });
+
+    });
+    </script>
+
+</body>
+</html>
