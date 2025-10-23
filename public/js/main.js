@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // ... (el resto de tu historia va aquí, he cortado para abreviar)
             // ...
             {
-                // Página 6
+                // Página 7
                 titulo: "El Sacrificio Final",
                 parrafo: "El combate fue un diálogo entre dos silencios. El Hollow Knight atacaba, pero sus golpes a veces se detenían, como si implorara que lo liberaran. El Caballero, sin emociones, cumplió con su propósito. Con cada impacto, la luz se filtraba por las grietas de su cuerpo. La infección, desesperada, buscaba un nuevo recipiente. Entonces, el Caballero avanzó. Aceptó su destino. El Vacío lo envolvió, sellando el templo una vez más. La infección quedó contenida en su cuerpo, y Hallownest cayó en un nuevo sueño."
             }
